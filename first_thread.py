@@ -1,23 +1,24 @@
-import threading 
-import time 
+import threading
+import time
 
-def main(): 
-    th = threading.Thread(target= contar, args = ('elefante',10)) 
-    th.start() 
 
-    print('Podemos fazer outras coisas no programa enquanto a thread vai executando...') 
-    print('Hello') 
+def main():
+    th = threading.Thread(target=contar, args=("elefante", 10))
+    th.start()
 
-    th.join() 
+    print("Podemos fazer outras coisas no programa enquanto a thread vai executando...")
+    print("Hello")
 
-    print('Pronto!') 
+    th.join()
 
-def contar (o_que, numero): 
-    for n in range (1, numero + 1): 
-        print (f'{n} {o_que} (s)...') 
-        time.sleep(1)  
+    print("Pronto!")
 
-if __name__ == '__main__': 
+
+def contar(o_que, numero):
+    for n in range(1, numero + 1):
+        print(f"{n} {o_que} (s)...")
+        time.sleep(1)
+
+
+if __name__ == "__main__":
     main()
-
-
